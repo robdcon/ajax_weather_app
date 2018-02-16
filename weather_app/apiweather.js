@@ -42,7 +42,7 @@ function convertWindDirection(degrees)
 {
 	var x = degrees;
 	var direction = "";
-	console.log(x) // Check degrees against output using the console
+	
 	switch(true)
 	{
 		case (x > 315):
@@ -156,13 +156,14 @@ function DayDate() // Create an object whose properties are a day and date in su
 	
 }
 
-//Make a request to the API for the desired infromation and build a table to hold that information
+//Make a request to the API for the desired information and build a table to hold that information
 //Then display the table in the DOM
 
 function getWeatherResults(cityName)
 {
 	var cityName = cityName;
-	var api_key = '3083a4c848a08b93aec8cb4fda2c25ff';
+	var api_key = "";
+	
 	$.getJSON('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + ',uk' + '&units=metric&appid=' + api_key, function(response)
 	{
 
